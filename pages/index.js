@@ -56,6 +56,10 @@ export default function Home(props) {
   useEffect(() => {
     // 在這裡初始化動畫
     // 如果有特定的動畫初始化函數，可以在這裡呼叫它們
+    if (typeof Webflow !== 'undefined') {
+      Webflow.ready();
+      Webflow.require('ix2').init();
+    }
   }, []);
 
   return (
